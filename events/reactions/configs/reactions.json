@@ -1,0 +1,700 @@
+{
+  "airkiss": {
+    "action": "Послать воздушный поцелуй",
+    "api_name": "airkiss",
+    "everyone": true,
+    "everyoneVerb": "воздушный поцелуй всему серверу",
+    "isApi": true,
+    "memberVerb": "воздушный поцелуй пользователю",
+    "verbal": "послал(-а)",
+    "type": "love",
+    "isAcceptable": false,
+    "aliases": [
+      "айркисс"
+    ],
+    "cost": 15
+  },
+  "angrystare": {
+    "action": "Злобно посмотреть",
+    "api_name": "angrystare",
+    "everyone": true,
+    "everyoneVerb": "на весь сервер",
+    "isApi": true,
+    "memberVerb": "на пользователя",
+    "verbal": "сердито смотрит",
+    "type": "action",
+    "isAcceptable": false,
+    "nsfw": false,
+    "aliases": [
+      "смотреть"
+    ],
+    "cost": 5
+  },
+  "bite": {
+    "action": "Укусить",
+    "api_name": "bite",
+    "everyone": true,
+    "everyoneVerb": "весь сервер",
+    "isApi": true,
+    "memberVerb": "пользователя",
+    "verbal": "укусил(-а)",
+    "type": "action",
+    "aliases": [
+      "кусь",
+      "кусание"
+    ],
+    "cost": 5
+  },
+  "blush": {
+    "action": "Смущаться",
+    "api_name": "blush",
+    "everyone": true,
+    "everyoneVerb": "",
+    "isApi": true,
+    "memberVerb": "из-за пользователя",
+    "verbal": "смущается",
+    "type": "emotion",
+    "aliases": [
+      "краснеет",
+      "стесняется"
+    ],
+    "cost": 10
+  },
+  "brofist": {
+    "action": "Дать пять",
+    "api_name": "brofist",
+    "everyone": true,
+    "everyoneVerb": "всему серверу",
+    "isApi": true,
+    "memberVerb": "пользователю",
+    "verbal": "даёт пять",
+    "type": "action",
+    "isAcceptable": false,
+    "nsfw": false,
+    "aliases": [
+      "пять",
+      "пятьвверх"
+    ],
+    "cost": 5
+  },
+  "celebrate": {
+    "action": "Праздновать",
+    "api_name": "celebrate",
+    "everyone": true,
+    "everyoneVerb": "со всем сервером",
+    "isApi": true,
+    "memberVerb": "с пользователем",
+    "verbal": "Празднует",
+    "type": "action",
+    "isAcceptable": false,
+    "nsfw": false,
+    "aliases": [
+      "праздник",
+      "празднование"
+    ],
+    "cost": 5
+  },
+  "cheers": {
+    "action": "Выпить",
+    "api_name": "cheers",
+    "everyone": true,
+    "everyoneVerb": "со всем сервером",
+    "isApi": true,
+    "memberVerb": "с пользователем",
+    "verbal": "выпивает",
+    "type": "action",
+    "isAcceptable": false,
+    "nsfw": false,
+    "aliases": [
+      "дринк",
+      "выпить",
+      "drink"
+    ],
+    "cost": 5
+  },
+  "clap": {
+    "action": "Хлопать",
+    "api_name": "clap",
+    "everyone": true,
+    "everyoneVerb": "всему серверу",
+    "isApi": true,
+    "memberVerb": "пользователю",
+    "verbal": "хлопает",
+    "type": "action",
+    "isAcceptable": false,
+    "nsfw": false,
+    "aliases": [
+      "аплодисменты",
+      "хлопки"
+    ],
+    "cost": 5
+  },
+  "confused": {
+    "action": "Озадачиться",
+    "api_name": "confused",
+    "everyone": true,
+    "everyoneVerb": "",
+    "isApi": true,
+    "memberVerb": "пользователем",
+    "verbal": "Озадачен",
+    "type": "emotion",
+    "isAcceptable": false,
+    "nsfw": false,
+    "aliases": [
+      "озадаченность",
+      "запутаться"
+    ],
+    "cost": 10
+  },
+  "cry": {
+    "action": "Плакать",
+    "api_name": "cry",
+    "everyone": true,
+    "everyoneVerb": "",
+    "isApi": true,
+    "memberVerb": "о своих трудностях пользователю",
+    "verbal": "плачет",
+    "type": "emotion",
+    "isAcceptable": false,
+    "nsfw": false,
+    "aliases": [
+      "грусть",
+      "печаль"
+    ],
+    "cost": 10
+  },
+  "dance": {
+    "action": "Танцевать",
+    "api_name": "dance",
+    "everyone": true,
+    "everyoneVerb": "",
+    "isApi": true,
+    "memberVerb": "с пользователем",
+    "verbal": "танцует",
+    "type": "action",
+    "isAcceptable": true,
+    "nsfw": false,
+    "aliases": [
+      "танец",
+      "танцы",
+      "танцевать"
+    ],
+    "cost": 5
+  },
+  "droll": {
+    "action": "Пускать слюни",
+    "api_name": "drool",
+    "everyone": true,
+    "everyoneVerb": "",
+    "isApi": true,
+    "memberVerb": "от пользователя",
+    "verbal": "пускает слюни",
+    "type": "action",
+    "isAcceptable": false,
+    "nsfw": false,
+    "aliases": [
+      "слюни",
+      "слюнявить"
+    ],
+    "cost": 5
+  },
+  "evillaugh": {
+    "action": "Злобно улыбаться",
+    "api_name": "evillaugh",
+    "everyone": true,
+    "everyoneVerb": "",
+    "isApi": true,
+    "memberVerb": "пользователю",
+    "verbal": "злобно улыбается",
+    "type": "action",
+    "isAcceptable": false,
+    "nsfw": false,
+    "aliases": [
+      "злорадство",
+      "зловещаяулыбка"
+    ],
+    "cost": 5
+  },
+  "facepalm": {
+    "action": "Разочароваться",
+    "api_name": "facepalm",
+    "everyone": true,
+    "everyoneVerb": "",
+    "isApi": true,
+    "memberVerb": "в пользователе",
+    "verbal": "разочарован",
+    "type": "emotion",
+    "isAcceptable": false,
+    "nsfw": false,
+    "aliases": [
+      "фейспалм",
+      "печаль"
+    ],
+    "cost": 10
+  },
+  "handhold": {
+    "action": "Держаться за руки",
+    "api_name": "handhold",
+    "everyone": true,
+    "everyoneVerb": "всем сервером",
+    "isApi": true,
+    "memberVerb": "пользователем",
+    "verbal": "держиться за руки с",
+    "type": "love",
+    "isAcceptable": false,
+    "nsfw": false,
+    "aliases": [
+      "руки",
+      "подержаться",
+      "ручки"
+    ],
+    "cost": 15
+  },
+  "happy": {
+    "action": "Радоваться",
+    "api_name": "happy",
+    "everyone": true,
+    "everyoneVerb": "",
+    "isApi": true,
+    "memberVerb": "пользователю",
+    "verbal": "радуется",
+    "type": "emotion",
+    "isAcceptable": false,
+    "nsfw": false,
+    "aliases": [
+      "радость",
+      "счастье",
+      "хэппи"
+    ],
+    "cost": 10
+  },
+  "headbang": {
+    "action": "Биться головой",
+    "api_name": "headbang",
+    "everyone": true,
+    "everyoneVerb": "",
+    "isApi": true,
+    "memberVerb": "об пользователя",
+    "verbal": "бьется головой",
+    "type": "action",
+    "isAcceptable": false,
+    "nsfw": false,
+    "aliases": [
+      "головой",
+      "бейхедом"
+    ],
+    "cost": 5
+  },
+  "hug": {
+    "action": "Обнять",
+    "api_name": "hug",
+    "everyone": true,
+    "everyoneVerb": "весь сервер",
+    "isApi": true,
+    "memberVerb": "пользователя",
+    "verbal": "обнял(-а)",
+    "type": "love",
+    "isAcceptable": false,
+    "nsfw": false,
+    "aliases": [
+      "объятие",
+      "обнимашки",
+      "обнять"
+    ],
+    "cost": 15
+  },
+  "kiss": {
+    "action": "Поцеловать",
+    "api_name": "kiss",
+    "everyone": false,
+    "everyoneVerb": "весь сервер",
+    "isApi": true,
+    "memberVerb": "пользователя",
+    "verbal": "поцеловал(-а)",
+    "type": "love",
+    "isAcceptable": true,
+    "nsfw": false,
+    "aliases": [
+      "поцелуй",
+      "целую",
+      "поцеловать",
+      "кис"
+    ],
+    "cost": 15
+  },
+  "laugh": {
+    "action": "Смеяться",
+    "api_name": "laugh",
+    "everyone": true,
+    "everyoneVerb": "",
+    "isApi": true,
+    "memberVerb": "с пользователем",
+    "verbal": "смеется",
+    "type": "emotion",
+    "isAcceptable": false,
+    "nsfw": false,
+    "aliases": [
+      "смех",
+      "хаха"
+    ],
+    "cost": 10
+  },
+  "lick": {
+    "action": "Облизывать",
+    "api_name": "lick",
+    "everyone": false,
+    "everyoneVerb": "",
+    "isApi": true,
+    "memberVerb": "пользователя",
+    "verbal": "облизывает",
+    "type": "love",
+    "isAcceptable": false,
+    "nsfw": false,
+    "aliases": [
+      "лизать",
+      "лизание",
+      "лизь"
+    ],
+    "cost": 15
+  },
+  "love": {
+    "action": "Признаться в любви",
+    "api_name": "love",
+    "everyone": true,
+    "everyoneVerb": "всему серверу",
+    "isApi": true,
+    "memberVerb": "пользователю",
+    "verbal": "признаётся в любви",
+    "type": "love",
+    "isAcceptable": false,
+    "nsfw": false,
+    "aliases": [
+      "люблю",
+      "любовь"
+    ],
+    "cost": 15
+  },
+  "mad": {
+    "action": "Обезуметь",
+    "api_name": "mad",
+    "everyone": true,
+    "everyoneVerb": "",
+    "isApi": true,
+    "memberVerb": "из-за пользователя",
+    "verbal": "обезумел",
+    "type": "emotion",
+    "isAcceptable": false,
+    "nsfw": false,
+    "aliases": [
+      "безумие",
+      "сердито"
+    ],
+    "cost": 10
+  },
+  "nervous": {
+    "action": "Нервничать",
+    "api_name": "nervous",
+    "everyone": true,
+    "everyoneVerb": "",
+    "isApi": true,
+    "memberVerb": "из-за пользователя",
+    "verbal": "нервничает",
+    "type": "emotion",
+    "isAcceptable": false,
+    "nsfw": false,
+    "aliases": [
+      "нервотрепка",
+      "волнение"
+    ],
+    "cost": 10
+  },
+  "pat": {
+    "action": "Погладить",
+    "api_name": "pat",
+    "everyone": true,
+    "everyoneVerb": "весь сервер",
+    "isApi": true,
+    "memberVerb": "пользователя",
+    "verbal": "погладил(-а)",
+    "type": "love",
+    "isAcceptable": false,
+    "nsfw": false,
+    "aliases": [
+      "гладить",
+      "поглаживание",
+      "погладить"
+    ],
+    "cost": 15
+  },
+  "sad": {
+    "action": "Грустить",
+    "api_name": "sad",
+    "aliases": [
+      "грусть",
+      "грустно",
+      "тильт"
+    ],
+    "everyone": true,
+    "everyoneVerb": "",
+    "isApi": true,
+    "memberVerb": "из-за пользователя",
+    "verbal": "грустит",
+    "type": "emotion",
+    "isAcceptable": false,
+    "nsfw": false,
+    "cost": 10
+  },
+  "shy": {
+    "action": "Стесняться",
+    "api_name": "shy",
+    "aliases": [
+      "стесняться",
+      "стеснение"
+    ],
+    "everyone": true,
+    "everyoneVerb": "",
+    "isApi": true,
+    "memberVerb": "из-за пользователя",
+    "verbal": "стесняется",
+    "type": "emotion",
+    "isAcceptable": false,
+    "nsfw": false,
+    "cost": 10
+  },
+  "sleep": {
+    "action": "Поспать",
+    "api_name": "sleep",
+    "aliases": [
+      "сон",
+      "уснуть",
+      "спать"
+    ],
+    "everyone": true,
+    "everyoneVerb": "",
+    "isApi": true,
+    "memberVerb": "с пользователем",
+    "verbal": "уснул(-а)",
+    "type": "action",
+    "isAcceptable": true,
+    "nsfw": false,
+    "cost": 5
+  },
+  "smile": {
+    "action": "Улыбаться",
+    "api_name": "smile",
+    "aliases": [
+      "улыбка",
+      "улыбнуться"
+    ],
+    "everyone": true,
+    "everyoneVerb": "всему серверу",
+    "isApi": true,
+    "memberVerb": "пользователю",
+    "verbal": "улыбнулся(-алась)",
+    "type": "emotion",
+    "isAcceptable": false,
+    "nsfw": false,
+    "cost": 10
+  },
+  "smoke": {
+    "action": "Курить",
+    "api_name": "smoke",
+    "aliases": [
+      "курение",
+      "курить",
+      "смоке"
+    ],
+    "everyone": true,
+    "everyoneVerb": "",
+    "isApi": false,
+    "memberVerb": "с пользователем",
+    "verbal": "курит",
+    "type": "action",
+    "isAcceptable": false,
+    "nsfw": false,
+    "cost": 5
+  },
+  "tea": {
+    "action": "Пить чай",
+    "api_name": "tea",
+    "aliases": [
+      "чай"
+    ],
+    "everyone": true,
+    "everyoneVerb": "",
+    "isApi": false,
+    "memberVerb": "с пользователем",
+    "verbal": "пьёт чай",
+    "type": "action",
+    "isAcceptable": false,
+    "nsfw": false,
+    "cost": 5
+  },
+  "coffee": {
+    "action": "Пить кофе",
+    "api_name": "coffee",
+    "aliases": [
+      "кофе"
+    ],
+    "everyone": true,
+    "everyoneVerb": "",
+    "isApi": false,
+    "memberVerb": "с пользователем",
+    "verbal": "пьёт кофе",
+    "type": "action",
+    "isAcceptable": false,
+    "nsfw": false,
+    "cost": 5
+  },
+  "squeeze": {
+    "action": "Тискать",
+    "api_name": "squeeze",
+    "aliases": [
+      "тискать"
+    ],
+    "everyone": true,
+    "everyoneVerb": "весь сервер",
+    "isApi": false,
+    "memberVerb": "пользователя",
+    "verbal": "тискает",
+    "type": "action",
+    "isAcceptable": false,
+    "nsfw": false,
+    "cost": 5
+  },
+  "cheek": {
+    "action": "Поцеловать в щечку",
+    "api_name": "cheek",
+    "aliases": [
+      "поцелуй",
+      "поцеловать"
+    ],
+    "everyone": false,
+    "everyoneVerb": "",
+    "isApi": false,
+    "memberVerb": "пользователя",
+    "verbal": "поцеловал(-а) в щечку",
+    "type": "love",
+    "isAcceptable": true,
+    "nsfw": false,
+    "cost": 15
+  },
+  "bonk": {
+    "action": "Ударить по голове",
+    "api_name": "bonk",
+    "aliases": [
+      "бонк",
+      "ударить"
+    ],
+    "everyone": true,
+    "everyoneVerb": "весь сервер",
+    "isApi": false,
+    "memberVerb": "пользователя",
+    "verbal": "бьёт по голове",
+    "type": "action",
+    "isAcceptable": false,
+    "nsfw": false,
+    "cost": 5
+  },
+  "slap": {
+    "action": "Дать пощёчину",
+    "api_name": "slap",
+    "aliases": [
+      "пощечина",
+      "слэп"
+    ],
+    "everyone": true,
+    "everyoneVerb": "самому себе",
+    "isApi": false,
+    "memberVerb": "пользователю",
+    "verbal": "дал(-а) подщёчину",
+    "type": "action",
+    "isAcceptable": false,
+    "nsfw": false,
+    "cost": 5
+  },
+  "wave": {
+    "action": "Помахать",
+    "api_name": "wave",
+    "aliases": [
+      "махать",
+      "помахать"
+    ],
+    "everyone": true,
+    "everyoneVerb": "всему серверу ручкой",
+    "isApi": true,
+    "memberVerb": "пользователю",
+    "verbal": "помахал(-а)",
+    "type": "action",
+    "isAcceptable": false,
+    "nsfw": false,
+    "cost": 5
+  },
+  "fuck": {
+    "action": "трахнуть",
+    "api_name": "fuck",
+    "aliases": [
+      "секс",
+      "трахаться"
+    ],
+    "everyone": false,
+    "everyoneVerb": "",
+    "isApi": false,
+    "memberVerb": "пользователя",
+    "verbal": "трахает",
+    "type": "nsfw",
+    "nsfw": true,
+    "isAcceptable": true
+  },
+  "poke": {
+    "action": "тыкать",
+    "api_name": "poke",
+    "aliases": [
+      "тык",
+      "тыкнуть"
+    ],
+    "everyone": true,
+    "everyoneVerb": "весь сервер",
+    "isApi": false,
+    "memberVerb": "пользователя",
+    "verbal": "тыкает",
+    "type": "action",
+    "nsfw": false,
+    "isAcceptable": false,
+    "cost": 5
+  },
+  "feed": {
+    "action": "кормить",
+    "api_name": "feed",
+    "aliases": [
+      "кормить",
+      "есть",
+      "eat"
+    ],
+    "everyone": true,
+    "everyoneVerb": "весь сервер",
+    "isApi": false,
+    "memberVerb": "пользователя",
+    "verbal": "кормит",
+    "type": "action",
+    "nsfw": false,
+    "isAcceptable": false,
+    "cost": 5
+  },
+  "snowball": {
+    "action": "кинуть снежок",
+    "api_name": "snowball",
+    "aliases": [
+      "снежок"
+    ],
+    "everyone": false,
+    "everyoneVerb": "",
+    "isApi": false,
+    "memberVerb": "пользователя",
+    "verbal": "кинул снежок в",
+    "type": "action",
+    "nsfw": false,
+    "isAcceptable": false,
+    "cost": 5
+  }
+}
