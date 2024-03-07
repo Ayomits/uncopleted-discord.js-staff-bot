@@ -7,7 +7,7 @@ export class VacansiesSettingsCommand implements SlashCommandStructure {
   data: SlashCommandBuilder;
 
   constructor (
-    private readonly settingsService: VacansiesSettingsService = new VacansiesSettingsService()
+    private readonly settingsService: VacansiesSettingsService
   ) {
     this.data = new SlashCommandBuilder()
                 .setName(`vacansies-settings`)

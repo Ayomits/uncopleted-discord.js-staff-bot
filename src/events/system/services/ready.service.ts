@@ -1,6 +1,8 @@
 import { Client, REST, Routes } from "discord.js";
 import InteractionCollector from "../collectors/interaction.collector";
 import { DataSource } from "typeorm";
+import * as path from 'path'
+
 
 export default class EventReadyService {
   constructor(
@@ -25,22 +27,6 @@ export default class EventReadyService {
     });
   }
 
-  public async connectToDb() {
-    try {
-      await new DataSource({
-        type: "postgres",
-        username: process.env.DB_USER,
-        database: process.env.DB_NAME,
-        password: process.env.DB_PASS,
-        port: Number(process.env.DB_PORT) || 5432,
-        entities: ["../../../**/*.entity{.ts,.js}"],
-        synchronize: true,
-      }).connect();
-      console.log(`[ConnectToDb] успешный коннект к базе данных`);
-    } catch (err) {
-      console.log(`Error`, err);
-    }
-  }
 
   // Регистрация Слэш команд
   private async commandRegister(client: Client) {

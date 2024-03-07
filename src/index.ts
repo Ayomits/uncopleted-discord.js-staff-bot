@@ -12,6 +12,7 @@ import {
   GuildID,
   AuditCache,
 } from "./base.types";
+import { DataSource } from "typeorm";
 
 config();
 
@@ -33,7 +34,7 @@ const intents = [
   GatewayIntentBits.GuildMessages,
   GatewayIntentBits.MessageContent,
   GatewayIntentBits.GuildVoiceStates,
-]; // обычный массив интентов
+]; 
 
 const client: Client = new Client({ intents: intents }); 
 
