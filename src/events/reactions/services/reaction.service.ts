@@ -38,7 +38,8 @@ export class ReactionsService {
           ? message.author?.displayAvatarURL()
           : undefined,
         text: message.author?.username,
-      });
+      })
+      .setTimestamp(new Date())
     let description: string = "";
     if (!reactionStruct?.everyone) {
       if (targetUser) {

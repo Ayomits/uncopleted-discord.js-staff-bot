@@ -8,15 +8,17 @@ datasource db {
 }
 
 model VacansiesSettings {
-  guildId                   String  @id
+  id                        Int     @id @default(autoincrement())
+  guildId                   String
   publishChannelId          String?
   vacansiesPublishChannelId String?
   embed                     Json?
 }
 
 model Vacancy {
-  guildId     String     @id
-  name        String    @unique
+  id          Int        @id @default(autoincrement())
+  guildId     String
+  name        String     @unique
   description String
   icon        String
   embed       Json?
@@ -28,6 +30,6 @@ model Question {
   guildId     String
   name        String
   placeholder String
-  vacancy     Vacancy @relation(fields: [vacancyId], references: [guildId])
-  vacancyId   String
+  vacancy     Vacancy @relation(fields: [vacancyId], references: [id])
+  vacancyId   Int
 }

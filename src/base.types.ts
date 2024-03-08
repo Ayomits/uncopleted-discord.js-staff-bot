@@ -22,6 +22,13 @@ export interface SlashCommand {
   autoComplete?: (interaction: AutocompleteInteraction) => void;
 }
 
+export type EmbedType = {
+  title: string;
+  description: string;
+  color: string;
+  imageLink: string;
+};
+
 export interface Button {
   customId: CustomId;
   execute: (

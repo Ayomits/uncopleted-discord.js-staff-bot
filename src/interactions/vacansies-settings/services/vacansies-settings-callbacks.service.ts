@@ -1,6 +1,7 @@
 import {
   ActionRowBuilder,
   EmbedBuilder,
+  Interaction,
   Message,
   ModalBuilder,
   StringSelectMenuBuilder,
@@ -9,6 +10,7 @@ import {
   TextInputStyle,
 } from "discord.js";
 import { prisma } from "../../../database";
+import { EmbedType } from "../settings.types";
 
 // This service needs for select menu in firs callback
 // This functions calling as callback by options
@@ -51,22 +53,25 @@ export class VacansiesSelectCallback {
       } catch (error) {
         collector.stop();
         await message.reply({
-          content: "Что-то пошло не так\n"+error,
+          content: "Что-то пошло не так\n" + error,
         });
       }
-    })
+    });
   }
 
   public async updateOrCreateSettings(
     guildId: string,
     data: Record<string, any>
   ): Promise<void> {
-    const existedSettings = await prisma.vacansiesSettings.findUnique({
-      where: { guildId },
+    const existedSettings = await prisma.vacansiesSettings.findFirst({
+      where: { id: { not: 0 }, guildId: guildId },
     });
 
     if (existedSettings) {
-      await prisma.vacansiesSettings.update({ where: { guildId }, data });
+      await prisma.vacansiesSettings.update({
+        where: { id: existedSettings.id },
+        data,
+      });
     } else {
       await prisma.vacansiesSettings.create({ data: { guildId, ...data } });
     }
@@ -92,8 +97,14 @@ export class VacansiesSelectCallback {
   public async vacansies(interaction: StringSelectMenuInteraction) {
     const embed = new EmbedBuilder()
       .setTitle("Настройки вакансий")
-      .setDescription("Здесь вы можете создать/просмотреть/обновить/удалить вакансию")
-      .setColor(process.env.BASE_EMBED_COLOR ? parseInt(process.env.BASE_EMBED_COLOR, 16) : null)
+      .setDescription(
+        "Здесь вы можете создать/просмотреть/обновить/удалить вакансию"
+      )
+      .setColor(
+        process.env.BASE_EMBED_COLOR
+          ? parseInt(process.env.BASE_EMBED_COLOR, 16)
+          : null
+      );
 
     const selectMenu = new StringSelectMenuBuilder()
       .setCustomId("vacansies-settings-vacancy")
@@ -103,7 +114,8 @@ export class VacansiesSelectCallback {
         { label: "Просмотреть все вакансии", value: "findAll" },
         { label: "Просмотреть по имени", value: "findByName" },
         { label: "Обновить вакансию", value: "update" },
-        { label: "Удалить вакансию", value: "delete" }
+        { label: "Удалить вакансию", value: "delete" },
+        { label: "Эмбед", value: "embed" }
       );
 
     return interaction.reply({
@@ -113,21 +125,99 @@ export class VacansiesSelectCallback {
     });
   }
 
-  public async embed(interaction: StringSelectMenuInteraction) {
+  public async embedSettings(interaction: StringSelectMenuInteraction) {
+    const existedEmbed = await prisma.vacansiesSettings.findFirst({
+      where: { guildId: interaction.guildId as string },
+    });
+    const embed = existedEmbed?.embed as EmbedType;
     const modal = new ModalBuilder()
       .setTitle("Embed Generator")
       .setCustomId("vacansies-settings-embed");
-    const jsonTextInput = new ActionRowBuilder().addComponents(
+    const name = new ActionRowBuilder().addComponents(
       new TextInputBuilder()
-      .setCustomId("embedJson")
-      .setLabel("JSON")
-      .setPlaceholder("Вставьте JSON код")
-      .setRequired(true)
-      .setStyle(TextInputStyle.Paragraph)
-    )
+        .setCustomId("name")
+        .setLabel("Название")
+        .setPlaceholder("name")
+        .setRequired(true)
+        .setStyle(TextInputStyle.Short)
+        .setValue(embed?.title || "название")
+    );
 
-    modal.addComponents(jsonTextInput as any);
+    const description = new ActionRowBuilder().addComponents(
+      new TextInputBuilder()
+        .setCustomId("description")
+        .setLabel("Описание")
+        .setPlaceholder("description")
+        .setRequired(true)
+        .setStyle(TextInputStyle.Paragraph)
+        .setValue(embed?.description || "описание")
+    );
+
+    const color = new ActionRowBuilder().addComponents(
+      new TextInputBuilder()
+        .setCustomId("color")
+        .setLabel("Цвет")
+        .setPlaceholder("000000")
+        .setMaxLength(6)
+        .setMinLength(6)
+        .setRequired(true)
+        .setStyle(TextInputStyle.Short)
+        .setValue(embed?.color || "000000")
+    );
+
+    const image = new ActionRowBuilder().addComponents(
+      new TextInputBuilder()
+        .setCustomId("image")
+        .setLabel("Ссылка на картинку")
+        .setPlaceholder("https://example.com")
+        .setRequired(true)
+        .setStyle(TextInputStyle.Paragraph)
+        .setValue(embed?.image.url || "http://example.com")
+    );
+
+    modal.addComponents(name, description, color, image as any);
 
     await interaction.showModal(modal);
+
+    interaction.client.on(
+      "interactionCreate",
+      async (interaction: Interaction): Promise<any> => {
+        try {
+          if (
+            interaction.isModalSubmit() &&
+            interaction.customId === "vacansies-settings-embed"
+          ) {
+            const name = interaction.fields.getField("name").value;
+            const description =
+              interaction.fields.getField("description").value;
+            const color = interaction.fields.getField("color").value;
+            const image = interaction.fields.getField("image").value;
+            const embedData = {
+              title: name,
+              description: description,
+              color: color,
+              image: image,
+            };
+            if (existedEmbed) {
+              await prisma.vacansiesSettings.update({
+                where: { id: existedEmbed.id },
+                data: { embed: embedData },
+              });
+            } else {
+              await prisma.vacansiesSettings.create({
+                data: {
+                  embed: embedData,
+                  guildId: interaction.guildId as string,
+                },
+              });
+            }
+            return await interaction.reply({
+              content: "Эмбед успешно установлен",
+              ephemeral: true,
+            });
+          }
+        } catch (err) {}
+      }
+    );
   }
 }

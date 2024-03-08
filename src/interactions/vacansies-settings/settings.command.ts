@@ -34,7 +34,7 @@ export class VacansiesSettingsCommand implements SlashCommandStructure {
 
     const selectMenu = new StringSelectMenuBuilder()
       .setCustomId("vacansies-settings-menu")
-      .setPlaceholder("выберите настройку")
+      .setPlaceholder("Выберите настройку")
       .setOptions(
         {
           label: "Канал публикации",
