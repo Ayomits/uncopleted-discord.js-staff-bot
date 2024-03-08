@@ -12,7 +12,6 @@ import {
   GuildID,
   AuditCache,
 } from "./base.types";
-import { DataSource } from "typeorm";
 
 config();
 

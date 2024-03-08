@@ -6,12 +6,27 @@ import {
 import axios from "axios";
 import * as path from "path";
 import * as fs from "fs";
-import {
-  ChoicesData,
-  ConfigData,
-  ConfigStruct,
-  ReactionsUrl,
-} from "../reaction.types";
+
+type ConfigStruct = {
+  action: string;
+  api_name: string;
+  everyone: boolean;
+  everyoneVerb: string;
+  isApi: boolean;
+  memberVerb: string;
+  verbal: string;
+  type: string;
+  isAcceptable: boolean;
+  nsfw: boolean;
+  aliases: string[]; // string[] это массив строк
+  cost: number;
+};
+
+type ConfigData = { [key: string]: ConfigStruct };
+
+type ReactionsUrl = { [key: string]: string[] };
+
+type ChoicesData = { name: string; value: string };
 
 export class ReactionsService {
   public async main(interaction: CommandInteraction): Promise<any> {
@@ -129,3 +144,4 @@ export class ReactionsService {
     }${message !== "undefined" ? "\nПотому что " + `**${message}**` : ""}`;
   }
 }
+

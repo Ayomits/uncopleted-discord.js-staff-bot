@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Vacancy" ALTER COLUMN "name" DROP NOT NULL,
+ALTER COLUMN "embed" DROP NOT NULL;

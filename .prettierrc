@@ -3,5 +3,8 @@
   "trailingComma": "es5",
   "tabWidth": 2,
   "semi": true,
-  "useTabs": false
+  "useTabs": false,
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  }
 }

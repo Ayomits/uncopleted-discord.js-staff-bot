@@ -52,3 +52,24 @@ export default class Reaction implements SlashCommandStructure {
     }
   }
 }
+
+export type ConfigStruct = {
+  action: string;
+  api_name: string;
+  everyone: boolean;
+  everyoneVerb: string;
+  isApi: boolean;
+  memberVerb: string;
+  verbal: string;
+  type: string;
+  isAcceptable: boolean;
+  nsfw: boolean;
+  aliases: string[];
+  cost: number;
+};
+
+export type ConfigData = { [key: string]: ConfigStruct };
+
+export type ChoicesData = { name: string; value: string };
+
+export type ReactionsUrl = { [key: string]: string[] };

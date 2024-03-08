@@ -1,7 +1,6 @@
 import { Client, REST, Routes } from "discord.js";
 import InteractionCollector from "../collectors/interaction.collector";
-import { DataSource } from "typeorm";
-import * as path from 'path'
+import { prisma } from "../../../database";
 
 
 export default class EventReadyService {
@@ -27,6 +26,16 @@ export default class EventReadyService {
     });
   }
 
+  public async connectToDb() {
+    prisma
+      .$connect()
+      .then(() => {
+        console.log(`[ConnectToDb] успешное подключение к БД`);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
   // Регистрация Слэш команд
   private async commandRegister(client: Client) {

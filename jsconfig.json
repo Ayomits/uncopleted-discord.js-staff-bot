@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@common/*": ["src/common/*"],
+      "@database/*": ["src/database/*"],
+      "@events/*": ["src/events/*"],
+      "@interactions/*": ["src/interactions/*"],
+      "@baseTypes": ["src/base.types.ts"],
+      "@structures/*": ["src/common/structure/*"]
+    }
+  }
+}

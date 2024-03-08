@@ -8,6 +8,7 @@ export class Ready extends EventStructure {
 
   public async execute(client: Client) {
     const ready = new EventReadyService(client);
+    await ready.connectToDb()
     await ready.commandActions();
   }
 }
